@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <section class="featured-post">
+    <section class="featured-posts">
       <PostPreview
         id="1"
         thumbnail="https://cdn.thetealmango.com/wp-content/uploads/2021/08/tech-Companies-pic.jpg"
@@ -32,6 +32,7 @@
   position: relative;
   padding: 30px;
   box-sizing: border-box;
+  background-image: url("~/assets/images/main-page-background.jpg");
   background-position: center;
   background-size: cover;
 }
