@@ -1,48 +1,18 @@
 <template>
-  <div class="admin-new-post-page">
-    <form @submit.prevent="onSave">
-      <UIAppControlInput v-model="editedPost.author"
-        >Author Name {{ editedPost.author }}</UIAppControlInput
-      >
-
-      <UIAppControlInput v-model="editedPost.title">Title</UIAppControlInput>
-
-      <UIAppControlInput v-model="editedPost.thumbnailLink"
-        >Thumbnail Link</UIAppControlInput
-      >
-
-      <UIAppControlInput control-type="textarea" v-model="editedPost.content"
-        >Content</UIAppControlInput
-      >
-      <UIAppButton type="submit">Save</UIAppButton>
-      <UIAppButton
-        type="button"
-        style="margin-left: 10px"
-        btn-style="cancel"
-        @click="onCancel"
-        >Cancel
-      </UIAppButton>
-    </form>
+  <div class="new-post-form">
+    <AdminPostFrom />
   </div>
 </template>
 
-<script setup>
-const editedPost = reactive({
-  author: "",
-  title: "",
-  thumbnailLink: "",
-  content: "",
-});
-
-const router = useRouter();
-
-function onSave() {
-  //save the post
-  console.log(editedPost);
+<style scoped>
+.new-post-form {
+  width: 90%;
+  margin: 20px auto;
 }
 
-function onCancel() {
-  //go back
-  router.push("/admin");
-}
-</script>
+@media (min-width: 768px) {
+  .new-post-form {
+    widows: 500px;
+  }
+} ;
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="'/post/' + id" class="post-preview">
+  <nuxt-link :to="postLink + id" class="post-preview">
     <article>
       <div
         class="post-thumbnail"
@@ -22,6 +22,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  isAdmin: {
+    type: Boolean,
+    required: true,
+  },
   title: {
     type: String,
     required: true,
@@ -34,6 +38,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+});
+
+const postLink = computed(() => {
+  return props.isAdmin ? "/admin/" + props.id : "/post/" + props.id;
 });
 </script>
 
