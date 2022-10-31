@@ -1,17 +1,22 @@
 <template>
   <div class="admin-page">
-    <section class="new-post">
-      <UIAppButton @click="redirect">Create Post</UIAppButton>
-    </section>
-    <section class="existing-posts">
-      <h1>Existing Posts</h1>
-      <PostList isAdmin />
-    </section>
+    <NuxtLayout name="admin">
+      <section class="new-post">
+        <UIAppButton @click="redirect">Create Post</UIAppButton>
+      </section>
+      <section class="existing-posts">
+        <h1>Existing Posts</h1>
+        <PostList isAdmin />
+      </section>
+    </NuxtLayout>
   </div>
 </template>
 
 <script setup>
 const router = useRouter();
+definePageMeta({
+  layout: false,
+});
 
 function redirect() {
   router.push("/admin/new-post");

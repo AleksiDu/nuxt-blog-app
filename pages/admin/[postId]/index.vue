@@ -1,11 +1,16 @@
 <template>
-  <div class="admin-post-page">
-    <section class="update-form"></section>
-    <AdminPostFrom :post="loadedPost" />
-  </div>
+  <NuxtLayout name="admin">
+    <div class="admin-post-page">
+      <section class="update-form"></section>
+      <AdminPostFrom :post="loadedPost" />
+    </div>
+  </NuxtLayout>
 </template>
 
 <script setup>
+definePageMeta({
+  layout: false,
+});
 const loadedPost = {
   author: "Alekis",
   title: "My Post",

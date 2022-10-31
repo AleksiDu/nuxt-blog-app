@@ -1,27 +1,29 @@
 <template>
-  <div class="admin-auth-page">
-    <div class="auth-container">
-      <form>
-        <UIAppControlInput type="email">E-Mail Address</UIAppControlInput>
-        <UIAppControlInput type="password">Password</UIAppControlInput>
-        <UIAppButton type="submit">{{
-          isLogin ? "Login" : "Sign Up"
-        }}</UIAppButton>
-        <UIAppButton
-          type="button"
-          btn-style="inverted"
-          style="margin-left: 10px"
-          @click="isLogin = !isLogin"
-          >Switch to {{ isLogin ? "Signup" : "Login" }}</UIAppButton
-        >
-      </form>
-    </div>
-  </div>
+  <NuxtLayout name="admin"
+    ><div class="admin-auth-page">
+      <div class="auth-container">
+        <form>
+          <UIAppControlInput type="email">E-Mail Address</UIAppControlInput>
+          <UIAppControlInput type="password">Password</UIAppControlInput>
+          <UIAppButton type="submit">{{
+            isLogin ? "Login" : "Sign Up"
+          }}</UIAppButton>
+          <UIAppButton
+            type="button"
+            btn-style="inverted"
+            style="margin-left: 10px"
+            @click="isLogin = !isLogin"
+            >Switch to {{ isLogin ? "Signup" : "Login" }}</UIAppButton
+          >
+        </form>
+      </div>
+    </div></NuxtLayout
+  >
 </template>
 
 <script setup>
 definePageMeta({
-  layout: "admin",
+  layout: false,
 });
 const isLogin = ref(true);
 </script>

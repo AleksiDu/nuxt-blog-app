@@ -1,8 +1,16 @@
 <template>
-  <div class="new-post-form">
-    <AdminPostFrom />
-  </div>
+  <NuxtLayout name="admin">
+    <div class="new-post-form">
+      <AdminPostFrom />
+    </div>
+  </NuxtLayout>
 </template>
+
+<script setup>
+definePageMeta({
+  layout: false,
+});
+</script>
 
 <style scoped>
 .new-post-form {
