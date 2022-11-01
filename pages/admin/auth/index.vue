@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="admin"
+  <NuxtLayout
     ><div class="admin-auth-page">
       <div class="auth-container">
         <form>
@@ -23,7 +23,7 @@
 
 <script setup>
 definePageMeta({
-  layout: false,
+  layout: "admin",
 });
 const isLogin = ref(true);
 </script>

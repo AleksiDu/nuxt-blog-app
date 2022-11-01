@@ -1,7 +1,9 @@
 <template>
-  <div class="post-page">
-    <PostList />
-  </div>
+  <NuxtLayout>
+    <div class="post-page">
+      <PostList />
+    </div>
+  </NuxtLayout>
 </template>
 
 <style scoped>

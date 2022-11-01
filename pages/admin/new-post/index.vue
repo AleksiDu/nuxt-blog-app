@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="admin">
+  <NuxtLayout>
     <div class="new-post-form">
       <AdminPostFrom />
     </div>
@@ -8,7 +8,7 @@
 
 <script setup>
 definePageMeta({
-  layout: false,
+  layout: "admin",
 });
 </script>
 

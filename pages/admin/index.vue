@@ -1,6 +1,6 @@
 <template>
   <div class="admin-page">
-    <NuxtLayout name="admin">
+    <NuxtLayout>
       <section class="new-post">
         <UIAppButton @click="redirect">Create Post</UIAppButton>
       </section>
@@ -15,7 +15,7 @@
 <script setup>
 const router = useRouter();
 definePageMeta({
-  layout: false,
+  layout: "admin",
 });
 
 function redirect() {

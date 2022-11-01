@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="admin">
+  <NuxtLayout>
     <div class="admin-post-page">
       <section class="update-form"></section>
       <AdminPostFrom :post="loadedPost" />
@@ -9,7 +9,7 @@
 
 <script setup>
 definePageMeta({
-  layout: false,
+  layout: "admin",
 });
 const loadedPost = {
   author: "Alekis",
