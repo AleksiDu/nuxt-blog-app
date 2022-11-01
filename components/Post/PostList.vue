@@ -1,25 +1,13 @@
 <template>
   <section class="post-list">
     <PostPreview
-      id="1"
+      v-for="post in posts"
+      :key="post.id"
+      :id="post.id"
       :is-admin="isAdmin"
-      thumbnail="https://cdn.thetealmango.com/wp-content/uploads/2021/08/tech-Companies-pic.jpg"
-      title="Hello there!"
-      previewText="This my first post!"
-    />
-    <PostPreview
-      id="2"
-      :is-admin="isAdmin"
-      thumbnail="https://cdn.thetealmango.com/wp-content/uploads/2021/08/tech-Companies-pic.jpg"
-      title="Hello there - the second time!"
-      previewText="This my second post!"
-    />
-    <PostPreview
-      id="3"
-      :is-admin="isAdmin"
-      thumbnail="https://cdn.thetealmango.com/wp-content/uploads/2021/08/tech-Companies-pic.jpg"
-      title="Hello!"
-      previewText="This my third post!"
+      :thumbnail="post.thumbnail"
+      :title="post.title"
+      :previewText="post.previewText"
     />
   </section>
 </template>
@@ -29,6 +17,10 @@ const props = defineProps({
   isAdmin: {
     type: Boolean,
     default: false,
+  },
+  posts: {
+    type: Array,
+    required: true,
   },
 });
 </script>

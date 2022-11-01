@@ -4,10 +4,29 @@
       <section class="intro">
         <h1>Get the latest tech news!</h1>
       </section>
-      <PostList />
+      <PostList :posts="loadedPosts" />
     </div>
   </NuxtLayout>
 </template>
+
+<script setup>
+const loadedPosts = ref([
+  {
+    id: "1",
+    title: "First Post",
+    previewText: "This is our first post",
+    thumbnail:
+      "https://cdn.thetealmango.com/wp-content/uploads/2021/08/tech-Companies-pic.jpg",
+  },
+  {
+    id: "2",
+    title: "Second Post",
+    previewText: "This is our second post",
+    thumbnail:
+      "https://cdn.thetealmango.com/wp-content/uploads/2021/08/tech-Companies-pic.jpg",
+  },
+]);
+</script>
 
 <style scoped>
 .intro {
